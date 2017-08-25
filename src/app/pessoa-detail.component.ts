@@ -1,10 +1,10 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location }                 from '@angular/common';
 
-import { Pessoa } from './pessoa';
-import { PessoaService } from './pessoa.service';
+import { Pessoa }                   from './pessoa';
+import { PessoaService }            from './pessoa.service';
 @Component({
     selector: 'pessoa-detail',
     templateUrl: './pessoa-detail.component.html',
@@ -25,6 +25,11 @@ export class PessoaDetailComponent implements OnInit {
                 +params.get('id')
             ))
             .subscribe(pessoa => this.pessoa = pessoa)
+    }
+
+    save(): void {
+        this.pessoaService.update(this.pessoa)
+            .then(() => this.goBack());
     }
 
     goBack(): void {

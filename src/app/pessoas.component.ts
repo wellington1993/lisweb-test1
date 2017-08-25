@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit }    from '@angular/core';
+import { Router }               from '@angular/router';
 
-import { Pessoa } from './pessoa';
-import { PessoaService } from './pessoa.service';
+import { Pessoa }               from './pessoa';
+import { PessoaService }        from './pessoa.service';
 
 @Component({
     selector: 'pessoas',

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }    from '@angular/core';
 
-import { Pessoa } from './pessoa';
-import { PessoaService } from './pessoa.service';
+import { Pessoa }               from './pessoa';
+import { PessoaService }        from './pessoa.service';
 
 @Component({
     selector: 'my-dashboard',
