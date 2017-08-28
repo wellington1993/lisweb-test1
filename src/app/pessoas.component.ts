@@ -22,6 +22,24 @@ export class PessoasComponent implements OnInit {
             .then(pessoas => this.pessoas = pessoas);
     }
 
+    add(name: string): void {
+        name = name.trim();
+        if (!name) { return; }
+        this.pessoaService.create(name)
+            .then(pessoa => {
+                this.pessoas.push(pessoa);
+                this.selectedPessoa = null;
+            });
+    }
+
+    delete(pessoa: Pessoa): void {
+        this.pessoaService
+            .delete(pessoa.id)
+            .then( () => {
+                this.pessoas = this.pessoas.filter(p => p !== pessoa)
+            });
+    }
+
     ngOnInit(): void {
         this.getPessoas();
     }

@@ -5,10 +5,13 @@ import { HttpModule }             from '@angular/http';
 
 import { AppRoutingModule }       from './app-routing.module';
 
+import { InMemoryWebApiModule }   from 'angular-in-memory-web-api';
+import { InMemoryDataService }    from './in-memory-data.service';
+
 import { AppComponent }           from './app.component';
 import { DashboardComponent }     from './dashboard.component';
-import { PessoaDetailComponent }  from './pessoa-detail.component';
 import { PessoasComponent }       from './pessoas.component';
+import { PessoaDetailComponent }  from './pessoa-detail.component';
 import { PessoaService }          from './pessoa.service';
 
 @NgModule({
@@ -16,6 +19,7 @@ import { PessoaService }          from './pessoa.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   declarations: [

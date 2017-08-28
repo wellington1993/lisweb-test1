@@ -5,6 +5,7 @@ import { Location }                 from '@angular/common';
 
 import { Pessoa }                   from './pessoa';
 import { PessoaService }            from './pessoa.service';
+
 @Component({
     selector: 'pessoa-detail',
     templateUrl: './pessoa-detail.component.html',
@@ -34,5 +35,9 @@ export class PessoaDetailComponent implements OnInit {
 
     goBack(): void {
         this.location.back();
+    }
+
+    update(hero: Pessoa): void {
+        //const url = `${this.pessoasUrl}/${pessoa.id}`;
     }
 }

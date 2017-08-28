@@ -9,7 +9,6 @@ import { PessoaService }        from './pessoa.service';
     styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-
     pessoas: Pessoa[] = [];
 
     constructor(private pessoaService: PessoaService) { }
