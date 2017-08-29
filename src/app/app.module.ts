@@ -13,20 +13,22 @@ import { DashboardComponent }     from './dashboard.component';
 import { PessoasComponent }       from './pessoas.component';
 import { PessoaDetailComponent }  from './pessoa-detail.component';
 import { PessoaService }          from './pessoa.service';
+import { PessoaSearchComponent }  from './pessoa-search.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true}) ,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
     PessoaDetailComponent,
-    PessoasComponent
+    PessoasComponent,
+    PessoaSearchComponent
   ],
   providers: [ PessoaService ],
   bootstrap: [ AppComponent ]

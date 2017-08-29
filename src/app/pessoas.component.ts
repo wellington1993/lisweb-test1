@@ -37,6 +37,7 @@ export class PessoasComponent implements OnInit {
             .delete(pessoa.id)
             .then( () => {
                 this.pessoas = this.pessoas.filter(p => p !== pessoa)
+                if (this.selectedPessoa === pessoa) { this.selectedPessoa = null; }
             });
     }
 

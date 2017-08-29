@@ -2,7 +2,7 @@
     <h4>Pessoa Search</h4>
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
     <div>
-        <div *ngFor="let pessoa pf pessoas | async"
+        <div *ngFor="let pessoa of pessoas | async"
                 (click)="gotoDetail(pessoa)" class="search-result" >
             {{pessoa.name}}
         </div>

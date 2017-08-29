@@ -14,6 +14,7 @@ import { PessoaService }            from './pessoa.service';
 export class PessoaDetailComponent implements OnInit {
     pessoa: Pessoa;
 
+    private pessoasUrl =  'api/pessoas';
     constructor(
         private pessoaService: PessoaService,
         private route: ActivatedRoute,
@@ -37,7 +38,7 @@ export class PessoaDetailComponent implements OnInit {
         this.location.back();
     }
 
-    update(hero: Pessoa): void {
-        //const url = `${this.pessoasUrl}/${pessoa.id}`;
+    update(pessoa: Pessoa): void {
+        const url = this.pessoasUrl + '/' + pessoa.id;;
     }
 }

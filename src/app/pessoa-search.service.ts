@@ -11,7 +11,7 @@ export class PessoaSearchService {
     constructor(private http: Http) {}
     search(term: string): Observable<Pessoa[]> {
         return this.http
-                    .get(`api/pessoas/name?=${term}`)
+                    .get(`api/pessoas/?name=${term}`)
                     .map(response => response.json().data as Pessoa[]);
         }
 }

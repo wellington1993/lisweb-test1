@@ -21,7 +21,7 @@ export class PessoaService {
   }
 
   getPessoa(id: number): Promise<Pessoa> {
-    const url = `$(this.pessoasUrl/${id}`;
+    const url = this.pessoasUrl + '/' + id;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Pessoa)
@@ -29,7 +29,7 @@ export class PessoaService {
   }
 
   delete(id: number): Promise<void> {
-    const url = `$(this.pessoasUrl/${id}`;
+    const url = this.pessoasUrl + '/' + id;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
@@ -45,7 +45,7 @@ export class PessoaService {
   }
 
   update(pessoa: Pessoa): Promise<Pessoa> {
-    const url = ``;
+    const url = this.pessoasUrl + '/' + pessoa.id;
     return this.http
       .put(url, JSON.stringify(pessoa), {headers: this.headers})
       .toPromise()
