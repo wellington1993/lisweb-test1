@@ -1,20 +1,19 @@
-import { Component, OnInit }    from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Pessoa }               from './pessoa';
-import { PessoaService }        from './pessoa.service';
-
+import { Heroi }        from './heroi';
+import { HeroiService } from './heroi.service';
 @Component({
     selector: 'my-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: [ './dashboard.component.css' ]
-})
+  })
 export class DashboardComponent implements OnInit {
-    pessoas: Pessoa[] = [];
+  herois: Heroi[] = [];
 
-    constructor(private pessoaService: PessoaService) { }
+  constructor(private HeroiService: HeroiService) {}
 
-    ngOnInit(): void {
-        this.pessoaService.getPessoas()
-            .then(pessoas => this.pessoas = pessoas);//.slice(1, 5));
+  ngOnInit() : void {
+    this.HeroiService.getHerois()
+      .then(herois => this.herois = herois.slice(0, 4));
     }
-}
+ }

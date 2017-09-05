@@ -2,13 +2,13 @@
     background-color: #CFD8DC !important;
     color: white;
   }
-  .pessoas {
+  .herois {
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
     width: 15em;
   }
-  .pessoas li {
+  .herois li {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -18,20 +18,20 @@
     height: 1.6em;
     border-radius: 4px;
   }
-  .pessoas li:hover {
+  .herois li:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
   }
-  .pessoas li.selected:hover {
+  .herois li.selected:hover {
     background-color: #BBD8DC !important;
     color: white;
   }
-  .pessoas .text {
+  .herois .text {
     position: relative;
     top: -3px;
   }
-  .pessoas .badge {
+  .herois .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -57,3 +57,11 @@
   button:hover {
     background-color: #cfd8dc;
   }
+  button.delete {
+    float:right;
+    margin-top: 2px;
+    margin-right: .8em;
+    background-color: gray !important;
+    color:white;
+  }
+  

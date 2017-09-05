@@ -1,10 +1,9 @@
-<h3>Pessoas</h3>
+<h3>Melhores Heróis</h3>
 <div class="grid grid-pad">
-    <a *ngFor="let pessoa of pessoas"
-        [routerLink]="['/detail', pessoa.id]" class="col-1-4">
-        <div class="module pessoa">
-            <h4>{{pessoa.name}}</h4>
-        </div>
-    </a>
+  <a *ngFor="let heroi of herois"  [routerLink]="['/detail', heroi.id]"  class="col-1-4">
+    <div class="module heroi">
+      <h4>{{heroi.nome}}</h4>
+    </div>
+  </a>
 </div>
-<pessoa-search></pessoa-search>
+<heroi-search></heroi-search>

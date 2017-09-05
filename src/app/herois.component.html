@@ -1,0 +1,22 @@
+<h2>Meus Heróis</h2>
+<ul class="herois">
+  <li *ngFor="let heroi of herois"
+    [class.selected]="heroi === selectedHero"
+    (click)="onSelect(heroi)">
+    <span class="badge">{{heroi.id}}</span> {{heroi.nome}}
+    <button class="delete"
+      (click)="deletar(heroi); $event.stopPropagation()">X</button>
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.nome | uppercase}} é meu herói
+  </h2>
+  <button (click)="detalhes()">Detalhes</button>
+</div>
+<div>
+  <label>Nome:</label> <input #nomeHeroi />
+  <button (click)="adicionar(nomeHeroi.value); nomeHeroi.value=''">
+    Adicionar
+  </button>
+</div>
